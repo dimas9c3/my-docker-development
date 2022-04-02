@@ -73,19 +73,19 @@ services:
       - app_network
 
   # Mongo DB
-  # mongodb:
-  #   container_name: 'mongodb'
-  #   image: mongo:latest
-  #   restart: 'unless-stopped'
-  #   ports:
-  #     - '27017-27019:27017-27019'
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: ${MONGODB_ROOT_USERNAME}
-  #     MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
-  #   volumes:
-  #     - ${MONGODB_DATA_DIR-./data/mongodb}:/data/db
-  #   networks:
-  #     - app_network
+  mongodb:
+    container_name: 'mongodb'
+    image: mongo:latest
+    restart: 'unless-stopped'
+    ports:
+      - '27017-27019:27017-27019'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
+    volumes:
+      - ${MONGODB_DATA_DIR-./data/mongodb}:/data/db
+    networks:
+      - app_network
   
 # Networks
 networks:

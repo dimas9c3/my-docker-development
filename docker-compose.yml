@@ -87,23 +87,6 @@ services:
     networks:
       - app_network
   
-  # Node
-  nodejs:
-    build: 
-      context: ./bin/nodejs
-    container_name: "nodejs"
-    restart: 'always'
-    user: "node"
-    working_dir: /home/node/app
-    environment:
-      - NODE_ENV=development
-    volumes:
-      - ./:/home/node/app
-    expose:
-      - "3333"
-    networks:
-      - app_network
-  
 # Networks
 networks:
   app_network:

@@ -70,7 +70,7 @@ RUN apt-get update \
         unixodbc-dev \
         msodbcsql17 
 
-RUN pecl install sqlsrv pdo_sqlsrv  \
+RUN pecl install sqlsrv-5.10.1 pdo_sqlsrv-5.10.1 \
     && docker-php-ext-enable sqlsrv pdo_sqlsrv
 
 # Install Freetype 
